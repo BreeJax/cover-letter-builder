@@ -5,13 +5,13 @@ class App extends Component {
   constructor(props) {
   super(props)
   this.state = {
-    userName: "Mark Smith",
-    companyName: "Haneke",
-    positionInCompany: "Morturary",
+    userName: "Jane Hill",
+    companyName: "SDG",
+    positionInCompany: "MuRdErEr",
     paragraphOneDropDown: "what you do",//"(the tech used you use,/what you do/our shared value in regards to)",
-    paragraphOneFillIn:"politics and node",
+    paragraphOneFillIn:"BlOoD",
     signOff: "With regards",
-    techUserUses: "node"
+    techUserUses: "KnIvEs"
   }
 }
   render() {
