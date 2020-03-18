@@ -3,7 +3,7 @@ body {
   padding: 0;
 }
 
-.userCompanyName {
+/* .userCompanyName {
   font-size: 1.5em;
 }
 
@@ -19,4 +19,8 @@ body {
   display: flex;
   flex-direction: column;
   padding-right: 3em;
-}
+} */
+
+{/* The following line can be included in your src/index.js or App.js file*/}
+
+/* import 'bootstrap/dist/css/bootstrap.min.css'; */

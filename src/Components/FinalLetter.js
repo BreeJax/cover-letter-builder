@@ -9,12 +9,12 @@ class FinalLetter extends Component {
 
         <span className="userContactInfo">
           <p className="userFullName"> {this.props.userName} </p>
-          <p className="userPhoneNumber">727-614-1770</p>
-          <p className="userEmail">breejax.codingstrong@gmail.com</p>
-          <p className="userPortfolio">http://breejax.herokuapp.com/</p>
+          <p className="userPhoneNumber">{this.props.phoneNumber}</p>
+          <p className="userEmail">{this.props.email}</p>
+          <p className="userPortfolio">{this.props.userPortfolio}</p>
         </span>
         <span className="FinalLetter">
-          <p>October 23, 2017</p>
+          <p>{this.props.headerDate}</p>
           <p>To Whom it may Concern, </p>
           <p>My name is {this.props.userName} and I am your next {this.props.positionInCompany}! I am interested in working at {this.props.companyName} because of {this.props.paragraphOneDropDown} {this.props.paragraphOneFillIn}! I believe I would be an asset to {this.props.companyName} because of my skills in {this.props.techUserUses}.</p>
           <p>I have been coding since June 2017, and haven’t stopped really since graduating from The Iron Yard, a coding bootcamp, in October that same year. From there, I gained a strong love for TDD and for the process that is coding.</p>
