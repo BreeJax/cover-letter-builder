@@ -16,8 +16,8 @@ class FinalLetter extends Component {
         <span className="FinalLetter">
           <p>{this.props.headerDate}</p>
           <p>To Whom it may Concern, </p>
-          <p>My name is {this.props.userName} and I am your next {this.props.positionInCompany}! I am interested in working at {this.props.companyName} because of {this.props.paragraphOneDropDown} {this.props.paragraphOneFillIn}! I believe I would be an asset to {this.props.companyName} because of my skills in {this.props.techUserUses}.</p>
-          <p>I have been coding since June 2017, and haven’t stopped really since graduating from The Iron Yard, a coding bootcamp, in October that same year. From there, I gained a strong love for TDD and for the process that is coding.</p>
+          <p>My name is {this.props.userName} and I am your next {this.props.positionInCompany}! I am interested in working at {this.props.companyName} because of {this.props.paragraphOneDropDown} {this.props.paragraphOneFillIn}! I believe I would be an asset to {this.props.companyName} because of my skills in {this.props.techShared}.</p>
+          <p>I have been coding since {this.props.userStartedDeveloping}, and haven’t stopped really since graduating from The Iron Yard, a coding bootcamp, in October that same year. From there, I gained a strong love for TDD and for the process that is coding.</p>
           <p>I am always determined to bring the best and safest user experience that I can, along with giving my all for every project that I do. I am an eager learner who looks forward to an asset to your company.</p>
           <p>I look forward to hearing more about this great opportunity!</p>
           <p>{this.props.signOff},</p>
