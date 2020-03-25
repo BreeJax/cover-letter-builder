@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import FinalLetter from "./Components/FinalLetter";
-import Start from "./Components/Start";
+import FinalLetter from "./Pages/FinalLetter";
+import Start from "./Pages/Start";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       //default is string
-      userName: "Sam Smith",
+      UserName: "Sam Smith",
       companyName: "SDG",
       positionInCompany: "Random Coder",
       paragraphOneDropDown: "what you do", // drop down "(the tech used you use,/what you do/our shared value in regards to)",
@@ -27,9 +27,14 @@ class App extends Component {
     //   return "hm";
     // };
   }
+  updateUserName = (value) => {
+    console.log("this is here Bree");
+    console.log("UserName " + value)
+
+    this.setState({ UserName: value })
+  }
 
   render() {
-    console.log(this.state);
     return (
       <Router>
         <div>
@@ -51,7 +56,7 @@ class App extends Component {
               />
             </Route>
             <Route exact path="/">
-              <Start />
+              <Start handleChange={(value) => this.updateUserName(value) } />
             </Route>
           </Switch>
         </div>
