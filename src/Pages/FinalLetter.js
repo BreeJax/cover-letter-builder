@@ -3,12 +3,13 @@ import React, { Component } from "react"
 class FinalLetter extends Component {
 
   render() {
+    console.log(this.props)
     return (
       <div className="userInputedConfiguredLetter">
         <p className="userCompanyName">{this.props.companyName}</p>
 
         <span className="userContactInfo">
-          <p className="userFullName"> {this.props.userName} </p>
+          <p className="userFullName"> {this.props.UserName} </p>
           <p className="userPhoneNumber">{this.props.phoneNumber}</p>
           <p className="userEmail">{this.props.email}</p>
           <p className="userPortfolio">{this.props.userPortfolio}</p>
@@ -16,12 +17,12 @@ class FinalLetter extends Component {
         <span className="FinalLetter">
           <p>{this.props.headerDate}</p>
           <p>To Whom it may Concern, </p>
-          <p>My name is {this.props.userName} and I am your next {this.props.positionInCompany}! I am interested in working at {this.props.companyName} because of {this.props.paragraphOneDropDown} {this.props.paragraphOneFillIn}! I believe I would be an asset to {this.props.companyName} because of my skills in {this.props.techShared}.</p>
+          <p>My name is {this.props.UserName} and I am your next {this.props.positionInCompany}! I am interested in working at {this.props.companyName} because of {this.props.paragraphOneDropDown} {this.props.paragraphOneFillIn}! I believe I would be an asset to {this.props.companyName} because of my skills in {this.props.techShared}.</p>
           <p>I have been coding since {this.props.userStartedDeveloping}, and haven’t stopped really since graduating from The Iron Yard, a coding bootcamp, in October that same year. From there, I gained a strong love for TDD and for the process that is coding.</p>
           <p>I am always determined to bring the best and safest user experience that I can, along with giving my all for every project that I do. I am an eager learner who looks forward to an asset to your company.</p>
           <p>I look forward to hearing more about this great opportunity!</p>
           <p>{this.props.signOff},</p>
-          <p>{this.props.userName}</p>
+          <p>{this.props.UserName}</p>
         </span>
 
       </div>
