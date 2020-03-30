@@ -19,7 +19,7 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case UPDATE_STRING: {
       const { property } = action.payload;
-      return {
+      return ({
         ...state,
         byPropertys: {
           ...state.byPropertys,
@@ -28,7 +28,7 @@ export default function(state = initialState, action) {
 
           }
         }
-      };
+    });
     }
     default:
       return state;

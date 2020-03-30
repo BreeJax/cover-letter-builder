@@ -1,4 +1,6 @@
 import React, { Component } from "react"
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
 
 class FinalLetter extends Component {
 
@@ -27,10 +29,13 @@ class FinalLetter extends Component {
 
       </div>
     )
-  }
-}
+  };
+};
 
-export default FinalLetter
+const mapStateToProps = ({stateItems}) => ({...stateItems});
+
+export default connect(mapStateToProps)(FinalLetter);
+
 //
 //
 //

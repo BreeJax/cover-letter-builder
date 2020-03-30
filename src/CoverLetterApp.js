@@ -36,18 +36,18 @@ class CoverLetterApp extends Component {
           <Switch>
             <Route exact path="/FinalLetter">
               <FinalLetter
-                UserName={this.state.UserName}
-                paragraphOneDropDown={this.state.paragraphOneDropDown}
-                companyName={this.state.companyName}
-                paragraphOneFillIn={this.state.paragraphOneFillIn}
-                positionInCompany={this.state.positionInCompany}
-                signOff={this.state.signOff}
-                techShared={this.state.techShared}
-                phoneNumber={this.state.phoneNumber}
-                email={this.state.email}
-                userPortfolio={this.state.userPortfolio}
-                headerDate={this.state.headerDate}
-                userStartedDeveloping={this.state.userStartedDeveloping}
+                // UserName={this.state.UserName}
+                // paragraphOneDropDown={this.state.paragraphOneDropDown}
+                // companyName={this.state.companyName}
+                // paragraphOneFillIn={this.state.paragraphOneFillIn}
+                // positionInCompany={this.state.positionInCompany}
+                // signOff={this.state.signOff}
+                // techShared={this.state.techShared}
+                // phoneNumber={this.state.phoneNumber}
+                // email={this.state.email}
+                // userPortfolio={this.state.userPortfolio}
+                // headerDate={this.state.headerDate}
+                // userStartedDeveloping={this.state.userStartedDeveloping}
               />
             </Route>
             <Route exact path="/">
