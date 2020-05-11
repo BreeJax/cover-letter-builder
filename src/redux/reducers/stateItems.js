@@ -1,34 +1,34 @@
-import { UPDATE_STRING } from "../actionTypes";
+import { UPDATE_COVER_LETTER_STRING } from "../actionTypes";
 
 const initialState = {
-    UserName: "Sam Smith",
-    companyName: "SDG",
-    positionInCompany: "Random Coder",
-    paragraphOneDropDown: "what you do",
-    paragraphOneFillIn: "BlOoD",
-    signOff: "With regards",
-    techShared: "Charzard, Pikachu, Squirtal",
-    phoneNumber: "727-867-5609",
-    email: "fake_email@sdg.com",
-    userPortfolio: "https://suncoast.io",
-    headerDate: "unknown",
-    userStartedDeveloping: "unknown",
-  };
+  //AboutYou
+  UserName: "",
+  userPortfolio: "",
+  phoneNumber: "",
+  email: "",
+  //AboutTheCompany
+  companyName: "",
+  positionInCompany: "",
+  //WhyWorkThere
+  paragraphOneFillIn: "",
+
+
+  signOff: "With regards",
+  techShared: "Charzard, Pikachu, Squirtal",
+  headerDate: "unknown",
+  userStartedDeveloping: "unknown"
+};
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case UPDATE_STRING: {
-      const { property } = action.payload;
-      return ({
+    case UPDATE_COVER_LETTER_STRING: {
+      const { property, value } = action.payload;
+      console.log("property of update");
+      console.log(property);
+      return {
         ...state,
-        byPropertys: {
-          ...state.byPropertys,
-          [property]: {
-            ...state.byPropertys[property],
-
-          }
-        }
-    });
+        [property]: value
+      };
     }
     default:
       return state;

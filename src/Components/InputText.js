@@ -10,9 +10,9 @@ class InputText extends Component {
           type="text" 
           id={this.props.id}
           name={this.props.id} 
-          required minlength="2" 
+          required minLength="2" 
           // size="10"
-          onChange={(e) => {(this.props.handleChange(e.target.value))}} 
+          // onChange={(e) => {(this.props.handleChange(e.target.value))}} 
           placeholder={this.props.placeholder}
         />
       </div>
