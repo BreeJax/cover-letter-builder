@@ -11,6 +11,10 @@ class AboutTheCompany extends React.Component {
   constructor(props) {
     super(props);
   }
+  handleUpdatedProperties = (payload) => {
+    console.log("here we are Bree 2");
+    this.props.updateCoverLetterString(payload);
+  };
 
   render() {
     return (
@@ -33,15 +37,6 @@ class AboutTheCompany extends React.Component {
           value={this.props.positionInCompany}
           id="positionInCompany"
           placeholder="i.e. Junior Javascript Developer"
-        />
-
-        <label for="paragraphOneFillIn">Why do you want to work there?</label>
-        <p>Finish this sentece: I am interested it working at {this.props.companyName || "your company"} because of...</p>
-        <input
-          onChange={e => this.handleUpdatedProperties({property: 'paragraphOneFillIn', value: e.target.value})}
-          value={this.props.paragraphOneFillIn}
-          id="paragraphOneFillIn"
-          placeholder="i.e. the company culture and the drive to be the best"
         />
 
         <Link to="/AboutYou">
