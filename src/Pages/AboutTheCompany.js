@@ -42,8 +42,8 @@ class AboutTheCompany extends React.Component {
           <Button href="/AboutYou" variant="dark">About You</Button>
         </Link>
 
-        <Link to="/WhyWorkThere">
-          <Button  variant="success">Now the Why</Button>
+        <Link to="/TechShared">
+          <Button  variant="success">Next- Shared Tech</Button>
         </Link>
 
         <Footer />
