@@ -51,5 +51,5 @@ const mapStateToProps = ({stateItems}) => ({...stateItems});
 export default connect(
   mapStateToProps,
   { updateCoverLetterString }
-)(AboutTheCompany);
+)(SignOff);
 // export default AddTodo;

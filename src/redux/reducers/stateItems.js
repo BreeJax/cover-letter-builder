@@ -12,13 +12,13 @@ const initialState = {
   //WhyWorkThere
   paragraphOneFillIn: "",
   //signOff
-  signOff: "With regards",
+  signOff: "",
   //HeaderDate
   headerDate: "",
   //techShared
   techShared: "",
   //StartedDeveloping
-  userStartedDeveloping: "unknown"
+  userStartedDeveloping: ""
 };
 
 export default function(state = initialState, action) {
