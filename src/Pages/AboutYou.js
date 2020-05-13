@@ -55,8 +55,8 @@ class AboutYou extends React.Component {
         />
 
         <Button href="/" variant="dark">Start Over</Button>
-        <Link to="/AboutTheCompany">
-          <Button  variant="success">Next - The Company</Button>
+        <Link to="/StartedDeveloping">
+          <Button  variant="success">Next - When you Started Developing</Button>
         </Link>
 
         <Footer />

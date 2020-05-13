@@ -11,11 +11,13 @@ const initialState = {
   positionInCompany: "",
   //WhyWorkThere
   paragraphOneFillIn: "",
-
-
+  //signOff
   signOff: "With regards",
-  techShared: "Charzard, Pikachu, Squirtal",
-  headerDate: "unknown",
+  //HeaderDate
+  headerDate: "",
+  //techShared
+  techShared: "",
+  //StartedDeveloping
   userStartedDeveloping: "unknown"
 };
 

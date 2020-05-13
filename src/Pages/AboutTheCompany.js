@@ -38,8 +38,8 @@ class AboutTheCompany extends React.Component {
           placeholder="i.e. Junior Javascript Developer"
         />
 
-        <Link to="/AboutYou">
-          <Button href="/AboutYou" variant="dark">About You</Button>
+        <Link to="/StartedDeveloping">
+          <Button href="/StartedDeveloping" variant="dark">Started Developing</Button>
         </Link>
 
         <Link to="/TechShared">

@@ -7,34 +7,36 @@ import {Link} from 'react-router-dom';
 import { updateCoverLetterString } from "../redux/actions";
 import Row from 'react-bootstrap/Row'
 
-class WhyWorkThere extends React.Component {
+class HeaderDate extends React.Component {
   constructor(props) {
     super(props);
   }
   handleUpdatedProperties = (payload) => {
     this.props.updateCoverLetterString(payload);
   };
+
   render() {
     return (
       <div>
 
-        <h1>Why do you want to work at {this.props.companyName}?</h1>
-        <p>Let's find out a little about the company you are applying to!</p>
+        <h1>Header Date</h1>
+        <p>This is the date that is going to be on the top of your letter. Think of it as a time stamp:</p>
+        <p>When do you want your interviewer to know that you wrote this letter? Today? Yesterday? Tomorrow?</p>
 
-        <label for="paragraphOneFillIn">Finish this sentece: I am interested it working at {this.props.companyName || "your company"} because of...</label>
+        <label for="headerDate"></label>
         <input
-          onChange={e => this.handleUpdatedProperties({property: 'paragraphOneFillIn', value: e.target.value})}
-          value={this.props.paragraphOneFillIn}
-          id="paragraphOneFillIn"
-          placeholder="i.e. the company culture and the drive to be the best"
+          onChange={e => this.handleUpdatedProperties({property: 'headerDate', value: e.target.value})}
+          value={this.props.headerDate}
+          id="headerDate"
+          placeholder="headerDate"
         />
 
-        <Link to="/TechShared">
-          <Button href="/TechShared" variant="dark">Tech Shared</Button>
+        <Link to="/WhyWorkThere">
+          <Button href="/WhyWorkThere" variant="dark">Why Work There</Button>
         </Link>
 
-        <Link to="/HeaderDate">
-          <Button  variant="success">Header Date</Button>
+        <Link to="/SignOff">
+          <Button  variant="success">Sign Off</Button>
         </Link>
 
         <Footer />

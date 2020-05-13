@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 import { updateCoverLetterString } from "../redux/actions";
 import Row from 'react-bootstrap/Row'
 
-class AboutTheCompany extends React.Component {
+class TechShared extends React.Component {
   constructor(props) {
     super(props);
   }
