@@ -12,7 +12,6 @@ class AboutTheCompany extends React.Component {
     super(props);
   }
   handleUpdatedProperties = (payload) => {
-    console.log("here we are Bree 2");
     this.props.updateCoverLetterString(payload);
   };
   render() {
