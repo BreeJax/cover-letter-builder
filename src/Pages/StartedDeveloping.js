@@ -5,6 +5,7 @@ import InputText from "../Components/InputText";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { updateCoverLetterString } from "../redux/actions";
+import DoubleLinkButtons  from "../Components/DoubleLinkButtons";
 
 class StartedDeveloping extends React.Component {
   constructor(props) {
@@ -43,13 +44,12 @@ class StartedDeveloping extends React.Component {
           </Row>
         </Container>
 
-        <Button href="/AboutYou" variant="dark">
-          About You
-        </Button>
-
-        <Button href="/AboutTheCompany" variant="success">
-          Next - The Company
-        </Button>
+        <DoubleLinkButtons
+          hrefBack="AboutYou"
+          backTitle="About You"
+          hrefNext="AboutTheCompany"
+          nextTitle="Next - The Company"
+        />
 
         <Footer />
       </div>

@@ -1,12 +1,12 @@
-import React, { Component } from "react"
-import {connect} from 'react-redux'
-import {bindActionCreators} from 'redux'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { Button, Container, Row, Col } from "react-bootstrap";
+import DoubleLinkButtons  from "../Components/DoubleLinkButtons";
 
 class FinalLetter extends Component {
-
   render() {
-    console.log(this.props)
+    console.log(this.props);
     return (
       <div className="userInputedConfiguredLetter">
         <p className="userCompanyName">{this.props.companyName}</p>
@@ -20,9 +20,25 @@ class FinalLetter extends Component {
         <span className="FinalLetter">
           <p>{this.props.headerDate}</p>
           <p>To Whom it may Concern, </p>
-          <p>My name is {this.props.UserName} and I am your next {this.props.positionInCompany}! I am interested in working at {this.props.companyName} because of {this.props.paragraphOneDropDown} {this.props.paragraphOneFillIn}! I believe I would be an asset to {this.props.companyName} because of my skills in {this.props.techShared}.</p>
-          <p>I have been coding since {this.props.userStartedDeveloping}, and haven’t stopped really since graduating from The Iron Yard, a coding bootcamp, in October that same year. From there, I gained a strong love for TDD and for the process that is coding.</p>
-          <p>I am always determined to bring the best and safest user experience that I can, along with giving my all for every project that I do. I am an eager learner who looks forward to an asset to your company.</p>
+          <p>
+            My name is {this.props.UserName} and I am your next{" "}
+            {this.props.positionInCompany}! I am interested in working at{" "}
+            {this.props.companyName} because of{" "}
+            {this.props.paragraphOneDropDown} {this.props.paragraphOneFillIn}! I
+            believe I would be an asset to {this.props.companyName} because of
+            my skills in {this.props.techShared}.
+          </p>
+          <p>
+            I have been coding since {this.props.userStartedDeveloping}, and
+            haven’t stopped really since graduating from The Iron Yard, a coding
+            bootcamp, in October that same year. From there, I gained a strong
+            love for TDD and for the process that is coding.
+          </p>
+          <p>
+            I am always determined to bring the best and safest user experience
+            that I can, along with giving my all for every project that I do. I
+            am an eager learner who looks forward to an asset to your company.
+          </p>
           <p>I look forward to hearing more about this great opportunity!</p>
           <p>{this.props.signOff},</p>
           <p>{this.props.UserName}</p>
@@ -31,13 +47,12 @@ class FinalLetter extends Component {
         <Button href="/" variant="info">
           Start Over
         </Button>
-
       </div>
-    )
-  };
-};
+    );
+  }
+}
 
-const mapStateToProps = ({stateItems}) => ({...stateItems});
+const mapStateToProps = ({ stateItems }) => ({ ...stateItems });
 
 export default connect(mapStateToProps)(FinalLetter);
 
@@ -60,12 +75,18 @@ export default connect(mapStateToProps)(FinalLetter);
 //
 //
 // Three personal values and examples of how they play in your life
-// —Helpfulness: When my family or friends call on me, either after car accidents or miscommunications, I do my best to come and fix, restore, or give a hand when I can. When I can’t, I give support in whatever way possible. 
-// —Integrity: I tend to be open about my own faults and how I feel about others in everything I do. 
-// —Security: I strive to create a safe work and living space where my mind can feel free to wonder and explore possibilities and problems that I can fix. 
-// —Wisdom: 
-// —Faith: I rely heavily on those around me, and trust in them to lead me down the right path, and trust that they feel the same in me. 
-// —Growth: Over time, I have grown from a recluse to someone who can communicate with many different people, and strive to continue that growth. 
+// —Helpfulness: When my family or friends call on me, either after car accidents or miscommunications, I do my best to come and fix, restore, or give a hand when I can. When I can’t, I give support in whatever way possible.
+
+// —Integrity: I tend to be open about my own faults and how I feel about others in everything I do.
+
+// —Security: I strive to create a safe work and living space where my mind can feel free to wonder and explore possibilities and problems that I can fix.
+
+// —Wisdom:
+
+// —Faith: I rely heavily on those around me, and trust in them to lead me down the right path, and trust that they feel the same in me.
+
+// —Growth: Over time, I have grown from a recluse to someone who can communicate with many different people, and strive to continue that growth.
+
 // —Creativity: I strive in being given tools and the ability to create things with those tools, from a computer with a few programs, to recyclable material that can be reused.
 //
 //

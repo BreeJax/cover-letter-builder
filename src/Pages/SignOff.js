@@ -5,6 +5,7 @@ import InputText from "../Components/InputText";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { updateCoverLetterString } from "../redux/actions";
+import DoubleLinkButtons  from "../Components/DoubleLinkButtons";
 
 class SignOff extends React.Component {
   constructor(props) {
@@ -43,12 +44,12 @@ class SignOff extends React.Component {
           </Row>
         </Container>
 
-        <Button href="/HeaderDate" variant="dark">
-          Header Date
-        </Button>
-        <Button href="/FinalLetter" variant="success">
-          Finally- Your Letter
-        </Button>
+        <DoubleLinkButtons
+          hrefBack="HeaderDate"
+          backTitle="Header Date"
+          hrefNext="FinalLetter"
+          nextTitle="Finally- Your Letter"
+        />
 
         <Footer />
       </div>

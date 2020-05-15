@@ -5,6 +5,7 @@ import InputText from "../Components/InputText";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { updateCoverLetterString } from "../redux/actions";
+import DoubleLinkButtons  from "../Components/DoubleLinkButtons";
 
 class TechShared extends React.Component {
   constructor(props) {
@@ -43,13 +44,12 @@ class TechShared extends React.Component {
           </Row>
         </Container>
 
-        <Button href="/AboutTheCompany" variant="dark">
-          About The Company
-        </Button>
-
-        <Button href="/WhyWorkThere" variant="success">
-          Now the Why
-        </Button>
+        <DoubleLinkButtons
+          hrefBack="AboutTheCompany"
+          backTitle="About The Company"
+          hrefNext="WhyWorkThere"
+          nextTitle="Now the Why"
+        />
 
         <Footer />
       </div>

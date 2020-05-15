@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Footer from "../Components/Footer";
 import { Button, Container, Row, Col } from "react-bootstrap";
+import DoubleLinkButtons  from "../Components/DoubleLinkButtons";
 
 class Start extends Component {
   render() {
