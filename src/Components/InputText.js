@@ -1,23 +1,36 @@
-import React, { Component } from "react"
+import React, { Component } from "react";
+import { Button, Container, Row, Col } from "react-bootstrap";
+
 
 class InputText extends Component {
   render() {
-    return <div className="Slider" className={this.props.special} >
-        <div className={this.props.title}>
-        <label for={this.props.id}>Name (4 to 8 characters):</label>
-
-        <input 
-          type="text" 
-          id={this.props.id}
-          name={this.props.id} 
-          required minLength="2" 
-          // size="10"
-          // onChange={(e) => {(this.props.handleChange(e.target.value))}} 
-          placeholder={this.props.placeholder}
-        />
+    return (
+      <div>
+        <Container fluid>
+          <Row>
+            <Col>
+              <label for="UserName">What's your name?</label>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <input
+                onChange={e =>
+                  this.handleUpdatedProperties({
+                    property: "UserName",
+                    value: e.target.value
+                  })
+                }
+                value={this.props.UserName}
+                id="UserName"
+                placeholder="i.e. John Smith"
+              />
+            </Col>
+          </Row>
+        </Container>
       </div>
-    </div>
+    );
   }
 }
 
-export default InputText
+export default InputText;

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Footer from "../Components/Footer";
-import { Button } from "react-bootstrap";
+import { Button, Container, Row, Col } from "react-bootstrap";
 import InputText from "../Components/InputText";
 import { connect } from "react-redux";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { updateCoverLetterString } from "../redux/actions";
 
 class AboutYou extends React.Component {
@@ -11,8 +11,7 @@ class AboutYou extends React.Component {
     super(props);
   }
 
-
-  handleUpdatedProperties = (payload) => {
+  handleUpdatedProperties = payload => {
     this.props.updateCoverLetterString(payload);
   };
 
@@ -22,52 +21,126 @@ class AboutYou extends React.Component {
         <h1>About You!</h1>
         <p>Let's find out a little about you!</p>
 
-        <label for="UserName">What's your name?</label>
-        <input
-          onChange={e => this.handleUpdatedProperties({property: 'UserName', value: e.target.value})}
-          value={this.props.UserName}
-          id="UserName"
-          placeholder="i.e. John Smith"
-        />
+        <Container fluid>
+          <Row>
+            <Col>
+              <label for="UserName">What's your name?</label>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <input
+                onChange={e =>
+                  this.handleUpdatedProperties({
+                    property: "UserName",
+                    value: e.target.value
+                  })
+                }
+                value={this.props.UserName}
+                id="UserName"
+                placeholder="i.e. John Smith"
+              />
+            </Col>
+          </Row>
+        </Container>
 
-        <label for="userPortfolio">Do you have a portfolio? If not, link to your github here.</label>
-        <input
-          onChange={e => this.handleUpdatedProperties({property: 'userPortfolio', value: e.target.value})}
-          value={this.props.userPortfolio}
-          id="userPortfolio"
-          placeholder="i.e. www.portfolio.com"
-        />
+        <Container fluid>
+          <Row>
+            <Col>
+              <label for="userPortfolio">
+                Do you have a portfolio? If not, link to your github here.
+              </label>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <input
+                onChange={e =>
+                  this.handleUpdatedProperties({
+                    property: "userPortfolio",
+                    value: e.target.value
+                  })
+                }
+                value={this.props.userPortfolio}
+                id="userPortfolio"
+                placeholder="i.e. www.portfolio.com"
+              />
+            </Col>
+          </Row>
+        </Container>
 
-        <label for="phoneNumber">What is a phone number to reach you at?</label>
-        <input
-          onChange={e => this.handleUpdatedProperties({property: 'phoneNumber', value: e.target.value})}
-          value={this.props.phoneNumber}
-          id="phoneNumber"
-          placeholder="i.e. 727-867-5309"
-        />
+        <Container fluid>
+          <Row>
+            <Col>
+              <label for="phoneNumber">
+                What is a phone number to reach you at?
+              </label>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <input
+                onChange={e =>
+                  this.handleUpdatedProperties({
+                    property: "phoneNumber",
+                    value: e.target.value
+                  })
+                }
+                value={this.props.phoneNumber}
+                id="phoneNumber"
+                placeholder="i.e. 727-867-5309"
+              />
+            </Col>
+          </Row>
+        </Container>
 
-        <label for="email">What is an email to reach you at?</label>
-        <input
-          onChange={e => this.handleUpdatedProperties({property: 'email', value: e.target.value})}
-          value={this.props.email}
-          id="email"
-          placeholder="i.e. fake_email@sdg.com"
-        />
+        <Container fluid>
+          <Row>
+            <Col>
+              <label for="email">What is an email to reach you at?</label>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <input
+                onChange={e =>
+                  this.handleUpdatedProperties({
+                    property: "email",
+                    value: e.target.value
+                  })
+                }
+                value={this.props.email}
+                id="email"
+                placeholder="i.e. fake_email@sdg.com"
+              />
+            </Col>
+          </Row>
+        </Container>
 
-        <Button href="/" variant="dark">Start Over</Button>
-        <Link to="/StartedDeveloping">
-          <Button  variant="success">Next - When you Started Developing</Button>
-        </Link>
+        <Container fluid>
+          <Row>
+            <Col>
+              <Button href="/" variant="dark">
+                Start Over
+              </Button>
+            </Col>
+            <Col>
+              <Link to="/StartedDeveloping">
+                <Button variant="success">
+                  Next - When you Started Developing
+                </Button>
+              </Link>
+            </Col>
+          </Row>
+        </Container>
 
         <Footer />
-
       </div>
     );
   }
 }
 
-const mapStateToProps = ({stateItems}) => ({...stateItems});
-
+const mapStateToProps = ({ stateItems }) => ({ ...stateItems });
 
 export default connect(
   mapStateToProps,
