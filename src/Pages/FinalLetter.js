@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
+import { Button, Container, Row, Col } from "react-bootstrap";
 
 class FinalLetter extends Component {
 
@@ -26,6 +27,10 @@ class FinalLetter extends Component {
           <p>{this.props.signOff},</p>
           <p>{this.props.UserName}</p>
         </span>
+
+        <Button href="/" variant="info">
+          Start Over
+        </Button>
 
       </div>
     )

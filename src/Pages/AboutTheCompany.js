@@ -1,60 +1,88 @@
 import React, { Component } from "react";
 import Footer from "../Components/Footer";
-import { Button } from "react-bootstrap";
+import { Button, Container, Row, Col } from "react-bootstrap";
 import InputText from "../Components/InputText";
 import { connect } from "react-redux";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { updateCoverLetterString } from "../redux/actions";
-import Row from 'react-bootstrap/Row'
 
 class AboutTheCompany extends React.Component {
   constructor(props) {
     super(props);
   }
-  handleUpdatedProperties = (payload) => {
+  handleUpdatedProperties = payload => {
     this.props.updateCoverLetterString(payload);
   };
 
   render() {
     return (
       <div>
-
         <h1>About the Company!</h1>
         <p>Let's find out a little about the company you are applying to!</p>
 
-        <label for="companyName">What's the name of the Company?</label>
-        <input
-          onChange={e => this.handleUpdatedProperties({property: 'companyName', value: e.target.value})}
-          value={this.props.companyName}
-          id="companyName"
-          placeholder="i.e. Suncoast Developers Guild"
-        />
+        <Container fluid>
+          <Row>
+            <Col>
+              <label for="companyName">What's the name of the Company?</label>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <input
+                onChange={e =>
+                  this.handleUpdatedProperties({
+                    property: "companyName",
+                    value: e.target.value
+                  })
+                }
+                value={this.props.companyName}
+                id="companyName"
+                placeholder="i.e. Suncoast Developers Guild"
+              />
+            </Col>
+          </Row>
+        </Container>
 
-        <label for="positionInCompany">What position are you applying for?</label>
-        <input
-          onChange={e => this.handleUpdatedProperties({property: 'positionInCompany', value: e.target.value})}
-          value={this.props.positionInCompany}
-          id="positionInCompany"
-          placeholder="i.e. Junior Javascript Developer"
-        />
+        <Container fluid>
+          <Row>
+            <Col>
+              <label for="positionInCompany">
+                What position are you applying for?
+              </label>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <input
+                onChange={e =>
+                  this.handleUpdatedProperties({
+                    property: "positionInCompany",
+                    value: e.target.value
+                  })
+                }
+                value={this.props.positionInCompany}
+                id="positionInCompany"
+                placeholder="i.e. Junior Javascript Developer"
+              />
+            </Col>
+          </Row>
+        </Container>
 
-        <Link to="/StartedDeveloping">
-          <Button href="/StartedDeveloping" variant="dark">Started Developing</Button>
-        </Link>
+        <Button href="/StartedDeveloping" variant="dark">
+          Started Developing
+        </Button>
 
-        <Link to="/TechShared">
-          <Button  variant="success">Next- Shared Tech</Button>
-        </Link>
+        <Button href="/TechShared" variant="success">
+          Next- Shared Tech
+        </Button>
 
         <Footer />
-
       </div>
     );
   }
 }
 
-const mapStateToProps = ({stateItems}) => ({...stateItems});
-
+const mapStateToProps = ({ stateItems }) => ({ ...stateItems });
 
 export default connect(
   mapStateToProps,

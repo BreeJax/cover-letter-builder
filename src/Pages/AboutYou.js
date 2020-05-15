@@ -117,22 +117,13 @@ class AboutYou extends React.Component {
           </Row>
         </Container>
 
-        <Container fluid>
-          <Row>
-            <Col>
-              <Button href="/" variant="dark">
-                Start Over
-              </Button>
-            </Col>
-            <Col>
-              <Link to="/StartedDeveloping">
-                <Button variant="success">
-                  Next - When you Started Developing
-                </Button>
-              </Link>
-            </Col>
-          </Row>
-        </Container>
+        <Button href="/" variant="dark">
+          Start Over
+        </Button>
+
+        <Button href="/StartedDeveloping" variant="success">
+          Next - When you Started Developing
+        </Button>
 
         <Footer />
       </div>
