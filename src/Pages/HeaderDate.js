@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Footer from "../Components/Footer";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import InputText from "../Components/InputText";
@@ -6,16 +6,37 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { updateCoverLetterString } from "../redux/actions";
 import DoubleLinkButtons  from "../Components/DoubleLinkButtons";
+import DatePicker from "react-datepicker"
+const moment = require('moment');
+
+const Picker = (props) => {
+  const [startDate, setStartDate] = useState();
+  console.log("setStartDate " + startDate);
+  console.log("props " + props);
+  console.log( props);
+
+  return (
+    <DatePicker
+      selected={props.value}
+      onChange={date => props.onChangeUpdate(date)}
+      dateFormat="MMMM d, yyyy"
+      placeholderText="Click to select a date"
+    />
+  );
+};
 
 class HeaderDate extends React.Component {
   constructor(props) {
     super(props);
   }
   handleUpdatedProperties = payload => {
+    console.log("handleUpdatedProperties" + payload);
+    console.log( payload);
     this.props.updateCoverLetterString(payload);
-  };
+};
 
   render() {
+    console.log(this)
     return (
       <div>
         <h1>Header Date</h1>
@@ -28,28 +49,15 @@ class HeaderDate extends React.Component {
           Today? Yesterday? Tomorrow?
         </p>
 
-        <Container fluid>
-          <Row>
-            <Col>
-              <label for="headerDate"></label>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <input
-                onChange={e =>
-                  this.handleUpdatedProperties({
-                    property: "headerDate",
-                    value: e.target.value
-                  })
-                }
-                value={this.props.headerDate}
-                id="headerDate"
-                placeholder="headerDate"
-              />
-            </Col>
-          </Row>
-        </Container>
+        <Picker
+        onChangeUpdate={e =>
+          this.handleUpdatedProperties({
+            property: "headerDate",
+            value:e
+          })
+        }
+        value={this.props.headerDate}
+        />
 
         <DoubleLinkButtons
           hrefBack="WhyWorkThere"
@@ -64,10 +72,32 @@ class HeaderDate extends React.Component {
   }
 }
 
+// <Container fluid>
+//   <Row>
+//     <Col>
+//       <label for="headerDate"></label>
+//     </Col>
+//   </Row>
+//   <Row>
+//     <Col>
+//       <input
+//         onChange={e =>
+//           this.handleUpdatedProperties({
+//             property: "headerDate",
+//             value: e.target.value
+//           })
+//         }
+//         value={this.props.headerDate}
+//         id="headerDate"
+//         placeholder="headerDate"
+//       />
+//     </Col>
+//   </Row>
+// </Container>
+
 const mapStateToProps = ({ stateItems }) => ({ ...stateItems });
 
 export default connect(
   mapStateToProps,
   { updateCoverLetterString }
 )(HeaderDate);
-// export default AddTodo;
