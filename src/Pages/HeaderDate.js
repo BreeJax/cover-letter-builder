@@ -1,42 +1,53 @@
 import React, { Component, useState } from "react";
 import Footer from "../Components/Footer";
 import { Button, Container, Row, Col } from "react-bootstrap";
-import InputText from "../Components/InputText";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { updateCoverLetterString } from "../redux/actions";
-import DoubleLinkButtons  from "../Components/DoubleLinkButtons";
-import DatePicker from "react-datepicker"
-const moment = require('moment');
+import DoubleLinkButtons from "../Components/DoubleLinkButtons";
+import DatePicker from "react-datepicker";
+const moment = require("moment");
 
-const Picker = (props) => {
-  const [startDate, setStartDate] = useState();
-  console.log("setStartDate " + startDate);
-  console.log("props " + props);
-  console.log( props);
-
-  return (
-    <DatePicker
-      selected={props.value}
-      onChange={date => props.onChangeUpdate(date)}
-      dateFormat="MMMM d, yyyy"
-      placeholderText="Click to select a date"
-    />
-  );
-};
+// const Picker = props => {
+//   const [startDate, setStartDate] = useState();
+//   console.log("setStartDate " + startDate);
+//   console.log("props " + props);
+//   console.log(props);
+//
+//   return (
+//     <DatePicker
+//       selected={props.value}
+//       onChange={date => props.onChangeUpdate(date)}
+//       dateFormat="MMMM d, yyyy"
+//       placeholderText="Click to select a date"
+//     />
+//   );
+// };
 
 class HeaderDate extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      startDate: null
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
+
+  handleChange(date) {
+   this.setState({
+     startDate: date
+   });
+ }
+
   handleUpdatedProperties = payload => {
     console.log("handleUpdatedProperties" + payload);
-    console.log( payload);
+    console.log(payload);
+    this.handleChange(payload.value)
     this.props.updateCoverLetterString(payload);
-};
+  };
 
   render() {
-    console.log(this)
+    console.log(this.props);
     return (
       <div>
         <h1>Header Date</h1>
@@ -49,14 +60,19 @@ class HeaderDate extends React.Component {
           Today? Yesterday? Tomorrow?
         </p>
 
-        <Picker
-        onChangeUpdate={e =>
-          this.handleUpdatedProperties({
-            property: "headerDate",
-            value:e
-          })
-        }
-        value={this.props.headerDate}
+
+
+        <DatePicker
+          selected={this.state.startDate}
+          // onChange={date => props.onChangeUpdate(date)}
+          onChange={e =>
+            this.handleUpdatedProperties({
+              property: "headerDate",
+              value: e
+            })
+          }
+          dateFormat="MMMM d, yyyy"
+          placeholderText="Click to select a date"
         />
 
         <DoubleLinkButtons

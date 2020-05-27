@@ -6,10 +6,10 @@ class DoubleLinkButtons extends Component {
   render() {
     return (
       <div>
-        <Button href={"/" + this.props.hrefBack} variant="dark">
+        <Button href={`/${this.props.hrefBack}`} variant="dark">
           {this.props.backTitle}
         </Button>
-        <Button href={"/" + this.props.hrefNext} variant="success">
+        <Button href={`/${this.props.hrefNext}`} variant="success">
           {this.props.nextTitle}
         </Button>{" "}
       </div>

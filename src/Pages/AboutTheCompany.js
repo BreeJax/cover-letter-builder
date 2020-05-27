@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Footer from "../Components/Footer";
 import { Button, Container, Row, Col } from "react-bootstrap";
-import InputText from "../Components/InputText";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { updateCoverLetterString } from "../redux/actions";
@@ -72,7 +71,7 @@ class AboutTheCompany extends React.Component {
           hrefNext="TechShared"
           nextTitle="Next- Shared Tech"
         />{" "}
-        
+
         <Footer />
       </div>
     );
