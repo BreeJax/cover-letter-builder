@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { updateCoverLetterString } from "../redux/actions";
 import DoubleLinkButtons from "../Components/DoubleLinkButtons";
-import DatePicker from "react-datepicker";
 const moment = require("moment");
 
 // const Picker = props => {
@@ -62,18 +61,28 @@ class HeaderDate extends React.Component {
 
 
 
-        <DatePicker
-          selected={this.state.startDate}
-          // onChange={date => props.onChangeUpdate(date)}
-          onChange={e =>
-            this.handleUpdatedProperties({
-              property: "headerDate",
-              value: e
-            })
-          }
-          dateFormat="MMMM d, yyyy"
-          placeholderText="Click to select a date"
-        />
+        <Container fluid>
+          <Row>
+            <Col>
+              <label for="headerDate"></label>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <input
+                onChange={e =>
+                  this.handleUpdatedProperties({
+                    property: "headerDate",
+                    value: e.target.value
+                  })
+                }
+                value={this.props.headerDate}
+                id="headerDate"
+                placeholder="headerDate"
+              />
+            </Col>
+          </Row>
+        </Container>
 
         <DoubleLinkButtons
           hrefBack="WhyWorkThere"
